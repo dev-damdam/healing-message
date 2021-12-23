@@ -7,6 +7,7 @@
       :placeholder="placeholder"
       :value="modelValue"
       @input="inputEventListener"
+      @focusout.stop="focusoutEventListener"
     />
     <span class="validate-label">{{ label }}</span>
   </div>
@@ -46,6 +47,9 @@ export default {
   methods: {
     inputEventListener(e) {
       this.$emit("update:modelValue", e.target.value);
+    },
+    focusoutEventListener(e) {
+      this.$emit("focusout", e);
     },
   },
 };
