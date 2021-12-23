@@ -1,0 +1,8 @@
+$hm-font: "Noto Sans CJK KR", "Noto Sans KR";
+
+$hm-default: #77ab59;
+$hm-green-dark70: #36802d;
+
+@function px($base) {
+  @return #{$base / 4 + "vw"};
+}
