@@ -1,11 +1,6 @@
 <template>
   <div class="hm-checkbox">
-    <input
-      type="checkbox"
-      :id="this.ckbId"
-      :value="modelValue"
-      @input="changeEventListener"
-    />
+    <input type="checkbox" :id="this.ckbId" :value="modelValue" @input="changeEventListener" />
     <label :for="this.ckbId">
       <font-awesome-icon icon="check" />
       <span class="checkbox-label"><slot /></span>
@@ -13,15 +8,15 @@
   </div>
 </template>
 <script>
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faCheck} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 library.add(faCheck);
 
 export default {
   name: "hm-checkbox",
-  components: { FontAwesomeIcon },
+  components: {FontAwesomeIcon},
   props: {
     modelValue: {
       requried: true,
