@@ -9,35 +9,19 @@
           class="input"
           :label="validateMessage.email"
         />
-        <hm-button type="button" @click="chkEmailDuplicate" class="button"
-          >중복확인</hm-button
-        >
+        <hm-button type="button" @click="chkEmailDuplicate" class="button">중복확인</hm-button>
       </div>
+      <hm-input v-model="inputs.password" type="password" placeholder="비밀번호" :label="validateMessage.password" />
       <hm-input
-        v-model="inputs.password"
-        type="password"
-        placeholder="비밀번호"
-        :label="validateMessage.password"
-      />
-      <hm-input
-        v-model="inputs.passwordCheck"
+        v-model="inputs.passwordConfirm"
         type="password"
         placeholder="비밀번호 확인"
-        :label="validateMessage.passwordCheck"
+        :label="validateMessage.passwordConfirm"
       />
-      <hm-input
-        v-model="inputs.nickname"
-        type="text"
-        placeholder="별명"
-        :label="validateMessage.nickname"
-      />
-      <hm-checkbox v-model="inputs.agree" id="agree" value="개인정보 동의"
-        >개인정보 동의</hm-checkbox
-      >
+      <hm-input v-model="inputs.nickname" type="text" placeholder="별명" :label="validateMessage.nickname" />
+      <hm-checkbox v-model="inputs.agree" id="agree" value="개인정보 동의">개인정보 동의</hm-checkbox>
 
-      <hm-button type="button" @click="register" class="register-btn"
-        >회원가입</hm-button
-      >
+      <hm-button type="button" @click="register" class="register-btn">회원가입</hm-button>
 
       <div class="msg-wrapper">
         <span>회원이신가요?</span>
@@ -52,40 +36,31 @@ import hmButton from "../../elements/hm-button.vue";
 import hmCheckbox from "../../elements/hm-checkbox.vue";
 
 export default {
-  components: { hmInput, hmButton, hmCheckbox },
+  components: {hmInput, hmButton, hmCheckbox},
   name: "hm-register-page",
   data() {
     return {
       inputs: {
         email: "",
         password: "",
-        passwordCheck: "",
+        passwordConfirm: "",
         nickname: "",
         agree: false,
       },
       validateMessage: {
         email: "",
         password: "",
-        passwordCheck: "",
+        passwordConfirm: "",
         nickname: "",
-        agree: "",
       },
     };
-  },
-  watch: {
-    inputs: {
-      handler(value) {
-        console.log(value);
-      },
-      deep: true,
-    },
   },
   methods: {
     chkEmailDuplicate() {
       console.log("click");
     },
     register() {
-      console.log("click register button");
+      this.$router.replace("/login");
     },
     moveLoginPage() {
       this.$router.push("/login");
