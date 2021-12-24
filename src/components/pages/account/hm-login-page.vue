@@ -12,7 +12,7 @@
       </div>
       <hm-input v-model="inputs.password" type="password" placeholder="비밀번호" :label="validateMessage.password" />
 
-      <hm-button type="button" @click="register" class="register-btn">로그인</hm-button>
+      <hm-button type="button" @click="login" class="register-btn">로그인</hm-button>
 
       <div class="msg-wrapper">
         <span>아직 회원이 아니신가요?</span>
@@ -48,6 +48,9 @@ export default {
   },
 
   methods: {
+    login() {
+      this.$router.replace("/home");
+    },
     moveRegisterPage() {
       this.$router.push("/register");
     },
