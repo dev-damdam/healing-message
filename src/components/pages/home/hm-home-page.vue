@@ -1,39 +1,47 @@
 <template>
   <div class="hm-home-page-wrapper">
-    <header>
-      <div class="bell-wrapper">
-        <font-awesome-icon icon="bell" />
+    <hm-layout>
+      <template v-slot:header>
+        <hm-header l-icon="bell">
+          <template v-slot:right>
+            <div
+              class="profile"
+              src="https://png.pngtree.com/png-vector/20190216/ourlarge/pngtree-cute-baby-dog-face-vector-png-image_550082.jpg"
+              @click="moveMyPage"
+            />
+          </template>
+        </hm-header>
+      </template>
+
+      <div class="banner">banner</div>
+      <div class="user-list-wrapper">
+        <hm-listview v-for="(user, index) in users" :key="index" line>
+          <hm-icon :src="user.icon.src"></hm-icon>
+          <hm-contents align="vertical">
+            <hm-label class="title">{{ user.nickname }}</hm-label>
+            <hm-label class="sub-title">{{ user.emotions }}</hm-label>
+          </hm-contents>
+          <hm-button>보내기</hm-button>
+        </hm-listview>
       </div>
-      <div class="profile" @click="moveMyPage" />
-    </header>
-    <div class="banner">banner</div>
-    <div class="user-list-wrapper">
-      <hm-listview v-for="(user, index) in users" :key="index" line>
-        <hm-icon :src="user.icon.src"></hm-icon>
-        <hm-contents align="vertical">
-          <hm-label class="title">{{ user.nickname }}</hm-label>
-          <hm-label class="sub-title">{{ user.emotions }}</hm-label>
-        </hm-contents>
-        <hm-button>보내기</hm-button>
-      </hm-listview>
-    </div>
+    </hm-layout>
   </div>
 </template>
 <script>
-import {library} from "@fortawesome/fontawesome-svg-core";
-import {faBell} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import hmLayout from "../../layouts/hm-layout.vue";
+import hmHeader from "../../layouts/hm-header.vue";
 import HmListview from "../../layouts/hm-listview.vue";
 import HmIcon from "../../elements/hm-icon.vue";
 import HmContents from "../../elements/hm-contents.vue";
 import HmLabel from "../../elements/hm-label.vue";
 import HmButton from "../../elements/hm-button.vue";
 
-library.add(faBell);
 export default {
   name: "hm-home-page",
   components: {
-    FontAwesomeIcon,
+    hmLayout,
+    hmHeader,
+    // FontAwesomeIcon,
     HmListview,
     HmButton,
     HmContents,
@@ -72,18 +80,6 @@ export default {
   width: 100%;
   height: 100%;
 
-  header {
-    width: 100%;
-    height: px(54);
-    padding: px(7);
-    box-sizing: border-box;
-    border-bottom: 1px solid $hm-gray;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   header svg {
     width: px(30);
     height: px(30);
@@ -111,7 +107,7 @@ export default {
 
   .user-list-wrapper {
     width: 100%;
-    height: calc(100% - #{px(294)});
+    height: calc(100% - #{px(240)});
     overflow: overlay;
   }
 }
