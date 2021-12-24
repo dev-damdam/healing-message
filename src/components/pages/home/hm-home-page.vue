@@ -41,7 +41,6 @@ export default {
   components: {
     hmLayout,
     hmHeader,
-    // FontAwesomeIcon,
     HmListview,
     HmButton,
     HmContents,
