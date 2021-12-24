@@ -1,6 +1,6 @@
 <template>
   <div class="hm-button">
-    <button :type="type" :id="id" :name="name" @click.stop="click">
+    <button :class="[size]" :type="type" :id="id" :name="name" @click.stop="click">
       <slot />
     </button>
   </div>
@@ -21,6 +21,10 @@ export default {
       default: "",
       type: String,
     },
+    size: {
+      default: "m",
+      type: String,
+    },
   },
   methods: {
     click(e) {
@@ -33,19 +37,29 @@ export default {
 .hm-button {
   button {
     width: 100%;
-    min-width: px(100);
-    min-height: px(35);
+
     padding: px(5) px(5);
     box-sizing: border-box;
     border-radius: px(15);
     border: px(1) solid $hm-default;
     background-color: $hm-default;
-    font: normal normal bold 14rem/17rem $hm-font;
     color: white;
 
     &:hover {
       background-color: $hm-green-dark70;
     }
+  }
+
+  .m {
+    min-width: px(100);
+    min-height: px(35);
+    font: normal normal bold 14rem/17rem $hm-font;
+  }
+
+  .s {
+    min-width: px(50);
+    min-height: px(30);
+    font: normal normal bold 12rem/14rem $hm-font;
   }
 }
 </style>
