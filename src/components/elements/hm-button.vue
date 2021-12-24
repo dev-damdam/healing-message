@@ -33,6 +33,8 @@ export default {
 .hm-button {
   button {
     width: 100%;
+    min-width: px(100);
+    min-height: px(35);
     padding: px(5) px(5);
     box-sizing: border-box;
     border-radius: px(15);
