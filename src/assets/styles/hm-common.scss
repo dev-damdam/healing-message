@@ -2,7 +2,8 @@ $hm-font: "Noto Sans CJK KR", "Noto Sans KR";
 
 $hm-default: #77ab59;
 $hm-green-dark70: #36802d;
+$hm-gray: #999999;
 
 @function px($base) {
-  @return #{$base / 4 + "vw"};
+  @return #{"min(" + $base / 4 +"vw, " + $base / 3 + "vh)"};
 }
