@@ -1,7 +1,7 @@
 <template>
   <header class="hm-header-wrapper" :class="[line ? 'line' : '']">
     <div class="icon">
-      <font-awesome-icon v-if="lIcon != ''" :icon="lIcon" />
+      <hm-icon v-if="lIcon != ''" :icon="lIcon" size="s" />
       <slot name="left" v-else />
     </div>
     <div class="title" :class="[align]">
@@ -11,21 +11,18 @@
       <span v-else><slot /></span>
     </div>
     <div class="icon">
-      <font-awesome-icon v-if="rIcon != ''" :icon="rIcon" />
+      <hm-icon v-if="rIcon != ''" :icon="rIcon" size="s" />
       <slot name="right" v-else />
     </div>
   </header>
 </template>
 <script>
-import {library} from "@fortawesome/fontawesome-svg-core";
-import {faChevronLeft, faCog, faBell} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import hmIcon from "../elements/hm-icon.vue";
 
-library.add(faChevronLeft, faCog, faBell);
 export default {
   name: "hm-header",
   components: {
-    FontAwesomeIcon,
+    hmIcon,
   },
   props: {
     line: {
@@ -65,11 +62,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .icon svg {
-    width: px(30);
-    height: px(30);
   }
 
   .title {
