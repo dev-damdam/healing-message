@@ -2,21 +2,17 @@
   <div class="hm-checkbox">
     <input type="checkbox" :id="this.ckbId" :value="modelValue" @input="changeEventListener" />
     <label :for="this.ckbId">
-      <font-awesome-icon icon="check" />
+      <hm-icon icon="check" class="checkbox-icon" size="xs" />
       <span class="checkbox-label"><slot /></span>
     </label>
   </div>
 </template>
 <script>
-import {library} from "@fortawesome/fontawesome-svg-core";
-import {faCheck} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-
-library.add(faCheck);
+import hmIcon from "../elements/hm-icon.vue";
 
 export default {
   name: "hm-checkbox",
-  components: {FontAwesomeIcon},
+  components: {hmIcon},
   props: {
     modelValue: {
       requried: true,
@@ -76,19 +72,19 @@ export default {
     align-items: center;
   }
 
-  input[type="checkbox"] + label svg {
-    display: inline-block;
-    width: px(6);
-    height: px(6);
+  input[type="checkbox"] + label .checkbox-icon {
+    font-size: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: px(1) solid $hm-default;
     border-radius: px(2);
-
     margin-right: px(2);
 
     color: transparent;
   }
 
-  input[type="checkbox"]:checked + label svg {
+  input[type="checkbox"]:checked + label .checkbox-icon {
     color: $hm-default;
   }
 }
