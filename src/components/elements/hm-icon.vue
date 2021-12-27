@@ -9,9 +9,9 @@
 </template>
 <script>
 import {library} from "@fortawesome/fontawesome-svg-core";
-import {faChevronLeft, faCog, faBell, faPencilAlt} from "@fortawesome/free-solid-svg-icons";
+import {faCheck, faChevronLeft, faCog, faBell, faPencilAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-library.add(faChevronLeft, faCog, faBell, faPencilAlt);
+library.add(faChevronLeft, faCog, faBell, faPencilAlt, faCheck);
 
 export default {
   name: "hm-icon",
