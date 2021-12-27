@@ -2,12 +2,11 @@
   <div class="hm-home-page-wrapper">
     <hm-layout>
       <template v-slot:header>
-        <hm-header l-icon="bell">
+        <hm-header l-icon="bell" @right-click="moveMyPage">
           <template v-slot:right>
             <div
               class="profile"
               src="https://png.pngtree.com/png-vector/20190216/ourlarge/pngtree-cute-baby-dog-face-vector-png-image_550082.jpg"
-              @click="moveMyPage"
             />
           </template>
         </hm-header>

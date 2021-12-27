@@ -2,7 +2,7 @@
   <div class="hm-my-page-wrapper">
     <hm-layout>
       <template v-slot:header>
-        <hm-header l-icon="chevron-left" r-icon="cog" />
+        <hm-header l-icon="chevron-left" r-icon="cog" back @back="back" @right-click="moveSettingPage" />
       </template>
       <div class="profile-wrapper">
         <div class="profile">
@@ -66,6 +66,16 @@ export default {
         contents: "내용입니다.",
       });
     }
+  },
+
+  methods: {
+    back() {
+      this.$router.back();
+    },
+
+    moveSettingPage() {
+      this.$router.push("/setting");
+    },
   },
 };
 </script>
