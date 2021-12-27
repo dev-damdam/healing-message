@@ -1,16 +1,17 @@
 <template>
   <header class="hm-header-wrapper" :class="[line ? 'line' : '']">
-    <div class="icon">
+    <div class="icon" @click="click('left', $event)">
       <hm-icon v-if="lIcon != ''" :icon="lIcon" size="s" />
       <slot name="left" v-else />
     </div>
+
     <div class="title" :class="[align]">
       <span v-if="title != ''">
         {{ title }}
       </span>
       <span v-else><slot /></span>
     </div>
-    <div class="icon">
+    <div class="icon" @click="click('right', $event)">
       <hm-icon v-if="rIcon != ''" :icon="rIcon" size="s" />
       <slot name="right" v-else />
     </div>
@@ -37,6 +38,10 @@ export default {
       type: String,
       default: "left",
     },
+    back: {
+      type: Boolean,
+      default: false,
+    },
     lIcon: {
       type: String,
       default: "",
@@ -44,6 +49,20 @@ export default {
     rIcon: {
       type: String,
       default: "",
+    },
+  },
+
+  methods: {
+    click(direction, e) {
+      if (direction == "left") {
+        if (this.back) this.moveBackPage(e);
+        else this.$emit("left-click", e);
+      } else {
+        this.$emit("right-click", e);
+      }
+    },
+    moveBackPage(e) {
+      this.$emit("back", e);
     },
   },
 };
