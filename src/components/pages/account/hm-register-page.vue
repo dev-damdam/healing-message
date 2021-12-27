@@ -9,7 +9,7 @@
           class="input"
           :label="validateMessage.email"
         />
-        <hm-button type="button" @click="chkEmailDuplicate" class="button">중복확인</hm-button>
+        <hm-button type="button" @click="chkEmailDuplicate" class="button" size="s">중복확인</hm-button>
       </div>
       <hm-input v-model="inputs.password" type="password" placeholder="비밀번호" :label="validateMessage.password" />
       <hm-input
@@ -19,7 +19,8 @@
         :label="validateMessage.passwordConfirm"
       />
       <hm-input v-model="inputs.nickname" type="text" placeholder="별명" :label="validateMessage.nickname" />
-      <hm-checkbox v-model="inputs.agree" id="agree" value="개인정보 동의">개인정보 동의</hm-checkbox>
+
+      <hm-checkbox v-model="inputs.agree" id="agree" value="개인정보 동의" size="xs">개인정보 동의</hm-checkbox>
 
       <hm-button type="button" @click="register" class="register-btn">회원가입</hm-button>
 
@@ -91,12 +92,12 @@ export default {
   justify-content: space-between;
 
   .input {
-    width: 80%;
+    width: 68%;
     height: 100%;
   }
 
   .button {
-    width: 20%;
+    width: 30%;
     height: 100%;
   }
 }

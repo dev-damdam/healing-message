@@ -16,7 +16,7 @@
 
       <div class="msg-wrapper">
         <span>아직 회원이 아니신가요?</span>
-        <span class="login" @click="moveRegisterPage">회원가입</span>
+        <span class="reigster" @click="moveRegisterPage">회원가입</span>
       </div>
       <div class="msg-wrapper">
         <span>이메일 / 비밀번호 찾기</span>
@@ -73,13 +73,17 @@ export default {
   height: px(240);
 }
 
+.register-btn {
+  margin-bottom: px(20);
+}
+
 .msg-wrapper {
   box-sizing: border-box;
   padding: px(4) px(0);
   text-align: center;
   font: normal normal normal 14rem/17rem $hm-font;
 
-  .login {
+  .reigster {
     padding-left: px(2);
     font-weight: bold;
 

@@ -52,14 +52,12 @@ export default {
 
   .m {
     min-width: px(100);
-    min-height: px(35);
     font: normal normal bold 14rem/17rem $hm-font;
   }
 
   .s {
     min-width: px(50);
-    min-height: px(30);
-    font: normal normal bold 12rem/14rem $hm-font;
+    font: normal normal bold 12rem/17rem $hm-font;
   }
 }
 </style>
