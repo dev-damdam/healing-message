@@ -6,7 +6,7 @@
       </template>
       <div class="profile-wrapper">
         <div class="profile">
-          <hm-button size="s" class="edit">edit</hm-button>
+          <hm-button size="s" class="edit" @click="editUserInfo">edit</hm-button>
         </div>
         <div class="info">
           <span class="name">뿡뿡뿡</span>
@@ -75,6 +75,10 @@ export default {
 
     moveSettingPage() {
       this.$router.push("/setting");
+    },
+
+    editUserInfo() {
+      this.$router.push("/edit-user");
     },
   },
 };
