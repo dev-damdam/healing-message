@@ -6,8 +6,9 @@ import HmRegisterPage from "../components/pages/account/hm-register-page.vue";
 import HmHomePage from "../components/pages/home/hm-home-page.vue";
 
 import HmMyPage from "../components/pages/my-page/hm-my-page.vue";
-
-import HmSettingPage from "../components/pages/my-page/hm-setting-page.vue";
+import HmEditUserPage from "../components/pages/my-page/hm-edit-user-page.vue";
+import HmSettingPage from "../components/pages/setting/hm-setting-page.vue";
+import HmNoticePage from "../components/pages/setting/hm-notice-page.vue";
 
 const routes = [
   {path: "/", name: "main", component: HmHomePage},
@@ -15,7 +16,9 @@ const routes = [
   {path: "/register", name: "register", component: HmRegisterPage},
   {path: "/home", name: "home", component: HmHomePage},
   {path: "/my-page", name: "my-page", component: HmMyPage},
+  {path: "/edit-user", name: "edit-user", component: HmEditUserPage},
   {path: "/setting", name: "setting", component: HmSettingPage},
+  {path: "/notice", name: "notice", component: HmNoticePage},
 ];
 
 const router = createRouter({
