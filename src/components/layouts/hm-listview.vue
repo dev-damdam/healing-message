@@ -27,8 +27,6 @@ export default {
   box-sizing: border-box;
 
   padding: px(10);
-
-  background-color: aqua;
 }
 
 .line {

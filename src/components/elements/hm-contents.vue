@@ -23,6 +23,7 @@ export default {
 
 .horizon {
   display: flex;
+  align-items: center;
 }
 
 .vertical {
