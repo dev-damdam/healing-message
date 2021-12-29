@@ -2,7 +2,7 @@
   <div class="hm-setting-page-wrapper">
     <hm-layout>
       <template v-slot:header>
-        <hm-header back line l-icon="chevron-left" title="설정" @back="back" />
+        <hm-header back line l-icon="chevron-left" title="공지사항" @back="back" />
       </template>
       <div v-for="(notice, index) in notices" :key="index">
         <hm-listview line @click.capture="clickNotice(index)">
@@ -50,7 +50,6 @@ export default {
   data() {
     return {
       notices: [],
-      selectedIndex: -1,
     };
   },
   methods: {
