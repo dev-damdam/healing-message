@@ -50,6 +50,10 @@ export default {
     clickList(key) {
       if (key == "notice") {
         this.$router.push("/notice");
+      } else if (key == "service-center") {
+        this.$router.push("/service-center");
+      } else if (key == "privacy") {
+        this.$router.push("privacy");
       }
     },
   },
