@@ -7,6 +7,7 @@ import HmHomePage from "../components/pages/home/hm-home-page.vue";
 
 import HmMyPage from "../components/pages/my-page/hm-my-page.vue";
 import HmEditUserPage from "../components/pages/my-page/hm-edit-user-page.vue";
+import HmWriteDiaryPage from "../components/pages/diary/hm-write-diary-page.vue";
 import HmSettingPage from "../components/pages/setting/hm-setting-page.vue";
 import HmNoticePage from "../components/pages/setting/hm-notice-page.vue";
 import HmServiceCenterPage from "../components/pages/setting/hm-service-center-page.vue";
@@ -19,6 +20,7 @@ const routes = [
   {path: "/home", name: "home", component: HmHomePage},
   {path: "/my-page", name: "my-page", component: HmMyPage},
   {path: "/edit-user", name: "edit-user", component: HmEditUserPage},
+  {path: "/write-diary", name: "write-diary", component: HmWriteDiaryPage},
   {path: "/setting", name: "setting", component: HmSettingPage},
   {path: "/notice", name: "notice", component: HmNoticePage},
   {path: "/service-center", name: "service-center", component: HmServiceCenterPage},

@@ -24,7 +24,7 @@
           </div>
         </hm-card>
       </div>
-      <div class="floating-button">
+      <div class="floating-button" @click="moveDiaryPage">
         <hm-icon icon="pencil-alt" size="xs" />
       </div>
     </hm-layout>
@@ -79,6 +79,10 @@ export default {
 
     editUserInfo() {
       this.$router.push("/edit-user");
+    },
+
+    moveDiaryPage() {
+      this.$router.push("/write-diary");
     },
   },
 };
